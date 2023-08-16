@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sweet Alert Testing</title>
+</head>
+<body>
+    <button type="button" class="btn btn-primary" onclick="function1()">Basic message</button>
+    <button type="button" class="btn btn-secondary" onclick="function62()">Title with a text</button>
+
+    <button type="button" class="btn btn-success" onclick="function3()">Success with icon</button>
+    <button type="button" class="btn btn-danger" onclick="function4()">Error with icon</button>
+    <button type="button" class="btn btn-warning" onclick="function5()">With confirm button</button>
+    <button type="button" class="btn btn-info" onclick="function6()">With image</button>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" ></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js" ></script>
+    <script language="JavaScript">
+        function function1() { 
+            swal("Hello world!");
+        }
+    </script>
+    <script language="JavaScript">
+        function function2() { 
+        swal("Success!", "Your data have been saved. Thank you!");
+        }
+    </script>
+    <script language="JavaScript">
+        function function3() { 
+            swal("Success!", "Your data have been saved. Thank you!", "success");
+        }
+        function function4() { 
+            swal("Sorry!", "Opps, something went wrong. Please try again later.", "error");
+        }
+        function function5() {
+            swal({
+              title: "Are you sure?",
+              text: "Once deleted, you will not be able to recover this file!",
+              icon: "warning",
+              buttons: true,
+              dangerMode: true,
+            })
+            .then((willDelete) => {
+              if (willDelete) {
+                swal("Poof! Your file has been deleted!", {
+                  icon: "success",
+                });
+              } else {
+                swal("Your file is safe!");
+              }
+            });
+        }
+        function function6() {
+            swal({
+              title: "Sweet!",
+              text: "Here's a custom image.",
+              icon: "https://static.photocdn.pt/images/articles/2018/12/05/articles/2017_8/beginner_photography_mistakes-1.webp"
+            });
+        }
+    </script>
+    
+</body>
+</html>
